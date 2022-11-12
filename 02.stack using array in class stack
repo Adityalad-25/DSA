@@ -1,0 +1,161 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+class stack
+{
+ 
+    int top;
+    int *arr;
+    int size;
+  public:
+         //constructor//
+         stack()
+         {
+             cout<<"enter size of stack: ";
+             cin>>size;
+             top=-1;//empty stack;
+             arr=new int[size];
+         }
+         //check is stack is empty//
+         int is_empty()
+         {
+             if(top==-1)
+             return  1;
+             else 
+             return 0;
+         }
+        //check is stack is full//
+          int is_full()
+         {
+             if(top=size-1)
+             return  1;
+             else 
+             return 0;
+         }
+         //push //
+         void push()
+         {
+             if(size-top>1)
+             {
+                int ele;
+               cout<<"enter element to push : ";
+               cin>>ele;
+               top++;
+               arr[top]=ele;
+               cout<<"element push or added is = "<<arr[top]<<endl;
+             }
+             else
+             {
+              
+               cout<<"stack overflow or stack is full"<<endl;
+             }
+         }
+         //pop//
+         void pop()
+         {
+             if(is_empty()==1)
+             {
+                 cout<<"stack underflow or is empty :"<<endl;
+             }
+             else
+             {
+                 cout<<"element poped out is = "<<arr[top]<<endl;
+                 top--;
+                 
+             }
+         }
+       void display_stack()
+       {
+           if(is_empty()==1)
+           {
+               cout<<"stackis empty or underflow "<<endl;
+               
+           }
+           else
+           {
+               cout<<"stack elements are : ";
+               for(int i=top;i>=0;i--)
+               {
+                   cout<<arr[i]<<" ";
+               }
+           }
+       }
+     
+};
+
+int main()
+{
+     //create object of class stack//
+     stack s;
+     s.push();
+     
+     s.pop();
+     
+     s.display_stack();
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    //  int ch;
+    //  cout<<"***** MENU ******"<<end;
+    //  cout<<"1 to push the element"<<endl;
+    //  cout<<"2 to pop the element "<<endl;
+    //  cout<<"3 to check stack is full "<<endl;
+    //  cout<<"4 to check stack is empty"<<endl;
+    //  cout<<"5 to display stack "<<endl;
+    //  cout<< "enter your choice : "<<endl;
+    //  cin>>ch;
+     
+    //  switch(ch)
+    // {
+    //   case 1:
+    //   {
+    //       s.push();
+    //   }
+    //   case 2:
+    //   {
+    //       s.pop();
+    //   }
+    //     case 3:
+    //   {
+    //       s.is_full();
+           
+    //   }
+    //     case 4:
+    //   {
+    //       s.is_empty();
+    //   }
+    //     case 5:
+    //   {
+    //      s.display_stack();
+    //   }
+    
+    // default:
+    // {
+    //     cout<<"enter valid choice "<<end;
+    // }
+    
+    // }
+    
+     
+     
+     
+
+    return 0;
+}
